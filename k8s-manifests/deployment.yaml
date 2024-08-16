@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  namespace: dev
+  labels:
+    app: gowt
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gowt
+  template:
+    metadata:
+      labels:
+        app: gowt
+    spec:
+      containers:
+      - name: gowt
+        image: gowt:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        envFrom:
+        - configMapRef:
+            name: app-config
+        - secretRef:
+            name: app-secret

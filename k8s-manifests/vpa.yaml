@@ -1,0 +1,22 @@
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: app-vpa
+  namespace: dev
+spec:
+  targetRef:
+    apiVersion: "apps/v1"
+    kind: Deployment
+    name: app-deployment
+  updatePolicy:
+    updateMode: "Auto" # Automatically update the resource requests and limits
+  resourcePolicy:
+    containerPolicies:
+    - containerName: app-container
+      minAllowed:
+        cpu: 200m
+        memory: 256Mi
+      maxAllowed:
+        cpu: 2
+        memory: 2Gi
+      controlledValues: RequestsAndLimits
