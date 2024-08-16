@@ -4,6 +4,6 @@ metadata:
   name: app-config
   namespace: dev
 data:
-  DATABASE_NAME: gwot
-  DATABASE_SERVER: "localhost"
-  DATABASE_PORT: "32000"
+  DATABASE_NAME: "gowt"
+  DATABASE_SERVER: "mysql-internal.dev.svc.cluster.local"
+  DATABASE_PORT: "3306"

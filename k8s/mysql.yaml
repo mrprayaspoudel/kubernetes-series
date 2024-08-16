@@ -53,7 +53,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: mysql
+  name: mysql-external
   namespace: dev
 spec:
   type: NodePort
@@ -64,3 +64,17 @@ spec:
     port: 3306
     targetPort: 3306
     nodePort: 32000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-internal
+  namespace: dev
+spec:
+  type: ClusterIP
+  selector:
+    app: mysql
+  ports:
+  - protocol: TCP
+    port: 3306
+    targetPort: 3306
