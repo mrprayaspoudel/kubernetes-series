@@ -1,4 +1,5 @@
 # GOWT
+
 Sample crud web application project using Golang(http, templates, os, sql), Bootstrap 4, DataTables, MySQL, Docker.
 
 ## Getting Started
@@ -9,17 +10,17 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software
 
-* Golang, preferably the latest version (1.16).
-* MySQL Database
-* Docker (optional)
+- Golang, preferably the latest version (1.16).
+- MySQL Database
+- Docker (optional)
 
 ### Installing
 
 1. Clone this repository
 
 ```
-git clone https://github.com/le4ndro/gowt.git
-cd gowt
+git clone https://github.com/mrprayaspoudel/kubernetes-series.git
+cd kubernetes-series
 ```
 
 2. Run below command and install dependencies
@@ -31,9 +32,9 @@ go mod download
 3. Create database on MySQL
 
 ```
-CREATE DATABASE gowtdb CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+CREATE DATABASE gowt;
 
-USE gowtdb;
+USE gowt;
 
 CREATE TABLE tools (
   id int(11) NOT NULL AUTO_INCREMENT,
@@ -49,9 +50,9 @@ CREATE TABLE tools (
 4. Create a .env file with the variables listed bellow and change values as needed
 
 ```
-DATABASE_NAME="gowtdb"
-DATABASE_USERNAME="user"
-DATABASE_PASSWORD="pass"
+DATABASE_NAME="gowt"
+DATABASE_USERNAME="root"
+DATABASE_PASSWORD="Nepal@123"
 DATABASE_SERVER="localhost"
 DATABASE_PORT="3306"
 ```
@@ -76,6 +77,7 @@ make build
 ./out/bin/gowt
 \out\bin\main.exe (Windows)
 ```
+
 ## Create Docker image
 
 1. To build and tag your image locally
@@ -96,26 +98,6 @@ make docker-release
 make docker-run
 ```
 
-
-## Built With
-
-* [Golang](https://golang.org/doc/) - The programming language 
-* [Bootstrap 4](https://getbootstrap.com/docs/4.2/getting-started/introduction/) - Html framework
-* [jQuery](https://api.jquery.com/) - Javascript library
-* [DataTables](https://datatables.net/manual/) - Advanced tables - Plug-in for jQuery
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
-
-## Authors
-
-* **Leandro Souza** - *Initial work*
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
-
 ## Acknowledgments
 
-* This project is in development
+- This project is in development
